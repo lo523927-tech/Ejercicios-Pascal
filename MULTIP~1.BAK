@@ -1,0 +1,37 @@
+program MultiplicarMatrices;
+uses crt;
+
+var
+  A, B, C: array[1..2,1..2] of integer;
+  i, j, k: integer;
+
+begin
+  clrscr;
+  writeln('Ingrese los elementos de la matriz A:');
+  for i:=1 to 2 do
+    for j:=1 to 2 do
+      readln(A[i,j]);
+
+  writeln('Ingrese los elementos de la matriz B:');
+  for i:=1 to 2 do
+    for j:=1 to 2 do
+      readln(B[i,j]);
+
+  {multiplicación}
+  for i:=1 to 2 do
+    for j:=1 to 2 do
+    begin
+      C[i,j] := 0;
+      for k:=1 to 2 do
+        C[i,j] := C[i,j] + A[i,k]*B[k,j];
+    end;
+
+  writeln('Matriz resultante:');
+  for i:=1 to 2 do
+  begin
+    for j:=1 to 2 do
+      write(C[i,j],' ');
+    writeln;
+  end;
+  pause
+end.
